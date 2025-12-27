@@ -1,18 +1,106 @@
-#search {
-    margin-left: 1850px;
-    margin-top: -50px;
+.top-nav {
+  position: relative;
+  height: 60px;
+  background: black;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  overflow: hidden;
 }
-#burger {
-    margin-top: -50px;
-    margin-left: 70px;
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-/* Carousel balandligi */
+
+.nav-left #nimadir1 {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#nimadir1 {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center;
+}
+#nimadir1:hover {
+    transform: scale(1.2);
+    fill: #546e96;
+}
+
+.logo {
+  height: 32px;
+}
+
+.nav-right {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+.search-overlay {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 15px;
+  transform: translateY(-100%);
+  transition: .4s ease;
+}
+
+.search-overlay input {
+  flex: 1;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.close-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+#search-toggle:checked ~ .search-overlay {
+  transform: translateY(0);
+}
+
+#search-toggle:checked ~ .nav-left,
+#search-toggle:checked ~ .nav-right {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#search-toggle:checked ~ .search-overlay {
+  transform: translateY(0);
+}
+
+#search-toggle:checked ~ .nav-left,
+#search-toggle:checked ~ .nav-right {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
 #mainCarousel .carousel-item img {
   height: 600px;
   object-fit: cover;
 }
 
-/* Caption stil */
+
 .carousel-caption {
   background: rgba(0, 0, 0, 0.45);
   padding: 1rem;
@@ -30,7 +118,7 @@
   color: #f1f1f1;
 }
 
-/* Carousel indikatorlar */
+
 .carousel-indicators button {
   background-color: #fff;
 }
